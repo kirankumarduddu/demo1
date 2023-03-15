@@ -3,13 +3,13 @@ import json
 from azure.storage.blob import ContainerClient
 
 # Replace this with your Azure API endpoint
-AZURE_API_ENDPOINT = 'https://qtitfhirpoc1-srvc1.fhir.azurehealthcareapis.com'
+AZURE_API_ENDPOINT = ''
 
 # Replace this with your Azure client ID
-AZURE_CLIENT_ID = '963d6e4f-2755-4ee7-8707-7b7904a2bedf'
+AZURE_CLIENT_ID = ''
 
 # Replace this with your Azure client secret
-AZURE_CLIENT_SECRET = 'omI8Q~veHhuUsrgsz7YYn.BHTJDbNpG2XGAopa9Q'
+AZURE_CLIENT_SECRET = ''
 
 # Get an access token from Azure's auth endpoint
 def get_access_token():
@@ -27,10 +27,10 @@ def get_access_token():
         raise Exception(f'Error getting access token: {response.text}')
 
 # Set the URL for the FHIR converter service
-converter_url = "https://qtitfhirpoc1-srvc1.fhir.azurehealthcareapis.com/$convert-data"
+converter_url = ""
 
 # Set the connection string for the Azure Blob storage account
-connection_string = 'DefaultEndpointsProtocol=https;AccountName=test4cloudshell4qti;AccountKey=huXa7rYBaB0aotwqbdOyikGlLo0dwgf0FZ5UieLI6Ekl8kjOkqUAJ9IkxYqNCYwJSMVIaOWSPTs5+AStQj4IWA==;EndpointSuffix=core.windows.net'
+connection_string = ''
 
 # Connect to the Azure Blob storage account
 container_client = ContainerClient.from_connection_string(connection_string, "ccda-xml-input")
@@ -75,7 +75,7 @@ def convert_and_upload():
                     },
                     {
                         "name": "templateCollectionReference",
-                        "valueString": "fhirconvertor.azurecr.io/fhirconvertor@sha256:adc0a4c1a2f74bd28014dfe5566196a3e3aa801ae4ec85429956927383a66b03"
+                        "valueString": "fhirconvertor.azurecr.io/fhirconvertor@sha256:"
                     },
                     {
                         "name": "rootTemplate",
